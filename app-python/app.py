@@ -9,8 +9,8 @@ class OrderService:
     def getOrders(self):
         return list(self.orders_collection.find())
 
-    def getOrdersByPizza(self, pizza_name):
-        return list(self.orders_collection.find({"name": pizza_name}))
+    def getOrdersByName(self, name):
+        return list(self.orders_collection.find({"name": name}))
 
     def getOrdersBySize(self, size):
         return list(self.orders_collection.find({"size": size}))
@@ -28,7 +28,7 @@ if __name__ == "__main__":
     print(order_service.getOrders())
 
     print("Commandes pour la pizza Pepperoni:")
-    print(order_service.getOrdersByPizza("Pepperoni"))
+    print(order_service.getOrdersByName("Pepperoni"))
 
     print("Commandes de grande taille:")
     print(order_service.getOrdersBySize("large"))
