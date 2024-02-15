@@ -33,3 +33,19 @@ f. Quel format de pizza a été le plus vendu ?
 g. Quelle recette de pizza a rapporté le plus de revenus ?
 
 > Pepperoni
+
+**Etape 4 :**
+
+a. Calcul de la quantité de pizzas commandées par format "medium" pour chaque recette de pizza : 
+
+> db.orders.aggregate([{ $group: { _id:{name:"$name", size:"medium" }, total_quantity: { $sum:"$quantity"}}}])
+
+> Pepperoni : 20
+> Cheese : 50
+> Vegan : 10
+
+b. Calcul du nombre moyen de pizzas commandées :
+
+> db.orders.aggregate([{$group: {_id: null,average_quantity: { $avg: "$quantity" }}}])
+
+> 19.375
