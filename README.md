@@ -49,3 +49,9 @@ b. Calcul du nombre moyen de pizzas commandées :
 > db.orders.aggregate([{$group: {_id: null,average_quantity: { $avg: "$quantity" }}}])
 
 > 19.375
+
+**Etape 5 :**
+
+a. Liste du menu des pizzas :
+
+> [{'name': 'Pepperoni', 'size': 'small', 'price': 19}, {'name': 'Pepperoni', 'size': 'medium', 'price': 20}, {'name': 'Pepperoni', 'size': 'large', 'price': 21}, {'name': 'Cheese', 'size': 'small', 'price': 12}, {'name': 'Cheese', 'size': 'medium', 'price': 13}, {'name': 'Cheese', 'size': 'large', 'price': 14}, {'name': 'Vegan', 'size': 'small', 'price': 17}, {'name': 'Vegan', 'size': 'medium', 'price': 18}]

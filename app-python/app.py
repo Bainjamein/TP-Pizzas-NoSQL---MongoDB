@@ -42,6 +42,14 @@ class OrderService:
     def getAveragePizzasOrdered(self):
         return self.getTotalPizzasOrdered() / len(self.getOrders())
     
+    def getMenuPizzas(self):
+        return list(self.orders_collection.find({}, {"_id": 0, "name": 1, "size": 1, "price": 1}))
+    
+    def creerFichierJson(self):
+        import json
+        with open('menu.json', 'w') as file:
+            json.dump(self.getMenuPizzas(), file)
+    
 if __name__ == "__main__":
 
     client = MongoClient('mongodb://mongodb:27017/')
@@ -87,3 +95,8 @@ if __name__ == "__main__":
 
     print("Moyenne de pizzas commandées:")
     print(order_service.getAveragePizzasOrdered())
+
+    print("Liste des pizzas:")
+    print(order_service.getMenuPizzas())
+
+    order_service.creerFichierJson()
