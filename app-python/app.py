@@ -18,16 +18,12 @@ class OrderService:
     def getOrdersByCriteria(self, criteria):
         return list(self.orders_collection.find(criteria))
 
-
-# Exemple d'utilisation
 if __name__ == "__main__":
-    # Connexion à la base de données MongoDB
+
     client = MongoClient('mongodb://mongodb:27017/')
     
-    # Instanciation du service de commande avec le client MongoDB
     order_service = OrderService(client)
 
-    # Exemples de requêtes
     print("Liste des commandes:")
     print(order_service.getOrders())
 
@@ -37,7 +33,6 @@ if __name__ == "__main__":
     print("Commandes de grande taille:")
     print(order_service.getOrdersBySize("large"))
 
-    # Exemple d'utilisation de la méthode unique avec un critère de filtre
     print("Commandes de pizza Margherita de grande taille:")
     criteria = {"name": "Pepperoni", "size": "large"}
     print(order_service.getOrdersByCriteria(criteria))
