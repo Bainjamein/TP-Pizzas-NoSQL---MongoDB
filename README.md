@@ -1,4 +1,4 @@
-Benjamin Perchepied MAALSI23
+Benjamin Perchepied - Quentin Savean MAALSI23
 
 Etape 3 :
 
