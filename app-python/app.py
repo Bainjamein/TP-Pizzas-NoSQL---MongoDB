@@ -35,6 +35,13 @@ class OrderService:
 
     def getPizzaMostIncome(self):
         return list(self.orders_collection.aggregate([{"$group": {"_id": "$name", "total": {"$sum": {"$multiply": ["$price", "$quantity"]}}}}, {"$sort": {"total": -1}}]))[0]["_id"]
+
+    def getOrdersByCriteriaSize(self, size):
+        return list(self.orders_collection.aggregate([{"$match": {"size": size}}, {"$group": {"_id": "$name", "total": {"$sum": "$quantity"}}}]))
+
+    def getAveragePizzasOrdered(self):
+        return self.getTotalPizzasOrdered() / len(self.getOrders())
+    
 if __name__ == "__main__":
 
     client = MongoClient('mongodb://mongodb:27017/')
@@ -74,3 +81,9 @@ if __name__ == "__main__":
 
     print("Recette de pizza avec le plus de revenus:")
     print(order_service.getPizzaMostIncome())
+
+    print("Commandes par taille:")
+    print(order_service.getOrdersByCriteriaSize("medium"))
+
+    print("Moyenne de pizzas commandées:")
+    print(order_service.getAveragePizzasOrdered())
