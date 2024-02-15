@@ -8,20 +8,19 @@ Commande pour run : __docker-compose up --build__
 
 a. Quel est le montant total des commandes de pizzas (tous formats confondus) ?
 
-> 134 €
+> 2540 €
 
-b. Combien de pizzas ont été commandées (toutes recettes et formats
-confondus) ?
+b. Combien de pizzas ont été commandées (toutes recettes et format confondus) ?
 
-> 8 commandes
+> 155 pizzas
 
 c. Combien de pizzas "Vegan" ont été commandées ?
 
-> 2 commandes
+> 20 pizzas
 
 d. Combien de pizzas ont été commandées en format "large" ?
 
-> 2 commandes
+> 40 pizzas
 
 e. Quelle recette de pizza a été la plus vendue ?
 
