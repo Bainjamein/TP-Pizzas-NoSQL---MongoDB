@@ -55,6 +55,15 @@ services:
     networks:
       - mongo_network
 
+  pizzas_menu_api:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb2
+    networks:
+      - mongo_network
+
 networks:
   mongo_network:
     driver: bridge

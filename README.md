@@ -55,3 +55,66 @@ b. Calcul du nombre moyen de pizzas commandées :
 a. Liste du menu des pizzas :
 
 > [{'name': 'Pepperoni', 'size': 'small', 'price': 19}, {'name': 'Pepperoni', 'size': 'medium', 'price': 20}, {'name': 'Pepperoni', 'size': 'large', 'price': 21}, {'name': 'Cheese', 'size': 'small', 'price': 12}, {'name': 'Cheese', 'size': 'medium', 'price': 13}, {'name': 'Cheese', 'size': 'large', 'price': 14}, {'name': 'Vegan', 'size': 'small', 'price': 17}, {'name': 'Vegan', 'size': 'medium', 'price': 18}]
+
+**Etape 6 :**
+
+a. HTTP GET /pizzas (retourne toutes les pizzas disponibles, au format JSON).
+
+```json
+[
+  {
+    "name": "Pepperoni",
+    "price": 19,
+    "size": "small"
+  },
+  {
+    "name": "Pepperoni",
+    "price": 20,
+    "size": "medium"
+  },
+  {
+    "name": "Pepperoni",
+    "price": 21,
+    "size": "large"
+  },
+  {
+    "name": "Cheese",
+    "price": 12,
+    "size": "small"
+  },
+  {
+    "name": "Cheese",
+    "price": 13,
+    "size": "medium"
+  },
+  {
+    "name": "Cheese",
+    "price": 14,
+    "size": "large"
+  },
+  {
+    "name": "Vegan",
+    "price": 17,
+    "size": "small"
+  },
+  {
+    "name": "Vegan",
+    "price": 18,
+    "size": "medium"
+  }
+]
+```
+
+b. HTTP GET /pizzas/65cf587aa0cd7bf4511ea25c (retourne la pizza selon son id avec ses différentes déclinaisons, au format JSON).
+
+```json
+{
+  "name": "Pepperoni",
+  "price": 19,
+  "size": "small"
+}
+```
+
+c. HTTP GET /pizzas/{id}/declinations/{size} (retourne la pizza selon son id et la déclinaison renseignée et le prix associé, au format JSON).
+
+> Le besoin métier n'as pas été compris.
