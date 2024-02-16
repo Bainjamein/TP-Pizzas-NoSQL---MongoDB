@@ -10,7 +10,8 @@ RUN pip install PyJWT
 
 COPY ./app-python /app
 
-CMD ["python", "pizzas_customers_api.py"]
+CMD ["python", "pizzas_shop_api.py"]
 
 EXPOSE 5001
 EXPOSE 5002
+EXPOSE 5003

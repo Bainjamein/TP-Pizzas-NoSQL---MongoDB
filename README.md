@@ -149,3 +149,17 @@ D. HTTP GET /customers/me
 	"password": "$2b$12$noyDCq8RyhNdN21/pvXit.E5NIjzjXIpXeKnSmHPp384QAeDMUj2S"
 }
 ```
+
+**Etape 8:**
+
+> Initialisation de la base de donnée MongoDB et du service pizza_shop.
+
+
+![PostgreSQL](https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png)
+
+>>>>
+
+![MongoDB](https://www.opc-router.de/wp-content/uploads/2021/03/mongodb_thumbnail.png)
+
+
+*The End.*
