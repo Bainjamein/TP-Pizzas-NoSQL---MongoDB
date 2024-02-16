@@ -21,6 +21,16 @@ services:
     networks:
       - mongo_network
 
+  mongodb3:
+    image: mongo:latest
+    container_name: mongodb3
+    ports:
+      - "27019:27017"
+    volumes:
+      - mongodb_data3:/data/db
+    networks:
+      - mongo_network
+
   mongo-express:
     image: mongo-express
     container_name: mongo-express
@@ -34,19 +44,6 @@ services:
     networks:
       - mongo_network
 
-  mongo-express2:
-    image: mongo-express
-    container_name: mongo-express2
-    ports:
-      - "8082:8081"
-    environment:
-      - ME_CONFIG_MONGODB_SERVER=mongodb2
-      - ME_CONFIG_MONGODB_PORT=27017
-    depends_on:
-      - mongodb2
-    networks:
-      - mongo_network  
-
   python-app:
     build: .
     container_name: python-app
@@ -58,9 +55,18 @@ services:
   pizzas_menu_api:
     build: .
     ports:
-      - "5000:5000"
+      - "5001:5001"
     depends_on:
       - mongodb2
+    networks:
+      - mongo_network
+
+  pizzas_customers_api:
+    build: .
+    ports:
+      - "5002:5002"
+    depends_on:
+      - mongodb3
     networks:
       - mongo_network
 
@@ -72,4 +78,6 @@ volumes:
   mongodb_data:
     driver: local
   mongodb_data2:
+    driver: local
+  mongodb_data3:
     driver: local

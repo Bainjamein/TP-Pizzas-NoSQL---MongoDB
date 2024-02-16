@@ -118,3 +118,34 @@ b. HTTP GET /pizzas/65cf587aa0cd7bf4511ea25c (retourne la pizza selon son id ave
 c. HTTP GET /pizzas/{id}/declinations/{size} (retourne la pizza selon son id et la déclinaison renseignée et le prix associé, au format JSON).
 
 > Le besoin métier n'as pas été compris.
+
+**Etape 7 :**
+
+a. HTTP POST /auth/signup (création de compte client)
+
+```json
+{
+	"customer_id": "65cf7e4859d0bcf985a81e96",
+	"message": "Compte client créé avec succès"
+}
+```
+
+b. HTTP POST /auth/signin
+
+```json
+{
+	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl9pZCI6IjY1Y2Y3ZTQ4NTlkMGJjZjk4NWE4MWU5NiIsImV4cCI6MTcwODEwMDc2MX0.yzf9cjMsPKdcs91_cDKAzY2drSjml-xAqdWx3WUVvi8"
+}
+```
+c. HTTP POST /auth/verify
+
+> "Vous etes un utilisateur valide"
+
+D. HTTP GET /customers/me
+
+```json
+{
+	"login": "Cedric",
+	"password": "$2b$12$noyDCq8RyhNdN21/pvXit.E5NIjzjXIpXeKnSmHPp384QAeDMUj2S"
+}
+```

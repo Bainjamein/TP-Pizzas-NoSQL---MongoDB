@@ -5,9 +5,12 @@ WORKDIR /app
 RUN pip install pymongo
 RUN pip install Flask 
 RUN pip install flask_pymongo
+RUN pip install flask_bcrypt
+RUN pip install PyJWT
 
 COPY ./app-python /app
 
-CMD ["python", "app_pizza_menu_api.py"]
+CMD ["python", "pizzas_customers_api.py"]
 
-EXPOSE 5000
+EXPOSE 5001
+EXPOSE 5002
