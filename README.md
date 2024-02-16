@@ -153,13 +153,11 @@ D. HTTP GET /customers/me
 **Etape 8:**
 
 > Initialisation de la base de donnée MongoDB et du service pizza_shop.
+<br/>
 
-
-![PostgreSQL](https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png)
-
->>>>
-
-![MongoDB](https://www.opc-router.de/wp-content/uploads/2021/03/mongodb_thumbnail.png)
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png" style="width: 50%;"/>
+</p>
 
 
 *The End.*
